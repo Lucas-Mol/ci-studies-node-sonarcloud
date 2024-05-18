@@ -1,0 +1,22 @@
+name: ci-sonarcloud
+on:
+  pull-request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  run-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+    -- name: Checkout
+        uses: actions/checkout@v4
+
+    -- name: Set up Node 18
+     uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+    - run: npm run build
+    - run: npm test
