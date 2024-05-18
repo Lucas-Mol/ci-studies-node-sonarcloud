@@ -18,6 +18,8 @@ jobs:
       with:
         node-version: 18
 
+    - run: npm i
+
     - name: Build application
       run: npm run build
 
